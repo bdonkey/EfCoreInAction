@@ -142,6 +142,7 @@ namespace MyFirstEfCoreApp
             return true;
         }
 
+ 
         public static void WriteTestData(this AppDbContext db)
         {
             var martinFowler = new Author

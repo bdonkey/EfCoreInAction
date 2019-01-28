@@ -7,10 +7,17 @@ namespace MyFirstEfCoreApp
 {
     public class AppDbContext : DbContext
     {
+        /*
         private const string ConnectionString =            //#A
             @"Server=(localdb)\mssqllocaldb;
              Database=MyFirstEfCoreDb;
              Trusted_Connection=True";
+             */
+        private const string ConnectionString = //#A
+            @"Server=localhost,1433;
+             Database=MyFirstEfCoreDb;
+             User=SA;
+Password=reallyStrongPwd123";
 
         protected override void OnConfiguring(
             DbContextOptionsBuilder optionsBuilder)
@@ -20,6 +27,7 @@ namespace MyFirstEfCoreApp
 
         public DbSet<Book> Books { get; set; }
     }
+
     /********************************************************
     #A The connection string is used by the SQL Server database provider to find the database
     #B Using the SQL Server database provider’s UseSqlServer command sets up the options ready for creating the applications’s DBContext
